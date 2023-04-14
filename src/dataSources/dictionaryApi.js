@@ -8,5 +8,9 @@ class DictionaryAPI extends RESTDataSource {
   getWords(user, language, translateLanguage) {
     return this.get(`words/${user}/${language}/${translateLanguage}`);
   }
+
+  getUser(user, password) {
+    return this.get(`users/${user}/${password}`);
+  }
 }
 module.exports = DictionaryAPI;

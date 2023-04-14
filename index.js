@@ -3,10 +3,11 @@ const resolvers = require("./src/resolvers/resolvers");
 
 const DictionaryAPI = require("./src/dataSources/dictionaryApi");
 
-const typeDefs = require("./src/graphql/schema");
+const typeDefsWords = require("./src/graphql/wordsSchema");
+const typeDefsUser = require("./src/graphql/usersSchema");
 
 const server = new ApolloServer({
-  typeDefs,
+  typeDefs: [typeDefsWords, typeDefsUser],
   resolvers,
   dataSources: () => {
     return {
