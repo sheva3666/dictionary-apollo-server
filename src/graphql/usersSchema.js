@@ -5,13 +5,29 @@ const typeDefsUser = gql`
     user(user: String!, password: String!): User
   }
 
-  # type Mutation {
-  #   addFavourite(movie: MovieInput!): Movie!
-  #   deleteFavourite(id: ID!): favouriteMovie!
-  # }
+  type Mutation {
+    createUser(user: UserInput!): String!
+    updateUser(id: ID!, user: UpdateUserInput!): String
+  }
 
   type User {
-    id: String
+    id: String!
+    name: String
+    email: String
+    password: String
+    language: String
+    languageForLearn: String
+  }
+
+  input UpdateUserInput {
+    name: String
+    email: String
+    password: String
+    language: String
+    languageForLearn: String
+  }
+
+  input UserInput {
     name: String
     email: String
     password: String

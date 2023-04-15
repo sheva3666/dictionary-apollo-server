@@ -12,5 +12,21 @@ class DictionaryAPI extends RESTDataSource {
   getUser(user, password) {
     return this.get(`users/${user}/${password}`);
   }
+
+  createUser(user) {
+    return this.post("users", JSON.stringify(user), {
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+  }
+
+  updateUser(id, user) {
+    return this.put(`users/${id}`, JSON.stringify(user), {
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+  }
 }
 module.exports = DictionaryAPI;
