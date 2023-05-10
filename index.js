@@ -9,6 +9,11 @@ const typeDefsUser = require("./src/graphql/usersSchema");
 const server = new ApolloServer({
   typeDefs: [typeDefsWords, typeDefsUser],
   resolvers,
+  introspection: true,
+  context: ({ req, res }) => ({
+    request: req,
+    response: res,
+  }),
   dataSources: () => {
     return {
       dictionaryAPI: new DictionaryAPI(),
