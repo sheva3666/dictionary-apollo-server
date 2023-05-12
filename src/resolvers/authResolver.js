@@ -1,7 +1,7 @@
 const authResolver = {
   Query: {
-    user: (_, { user, password }, { dataSources }) => {
-      return dataSources.dictionaryAPI.getUser(user, password);
+    auth: (_, { userEmail }, { dataSources }) => {
+      return dataSources.dictionaryAPI.getAuth(userEmail);
     },
   },
 };

@@ -5,14 +5,20 @@ const typeDefsWords = gql`
     words(user: String!, language: String!, translateLanguage: String!): [Word]
   }
 
-  # type Mutation {
-  #   addFavourite(movie: MovieInput!): Movie!
-  #   deleteFavourite(id: ID!): favouriteMovie!
-  # }
+  type Mutation {
+    addWord(word: WordInput!): Word!
+  }
 
   type Word {
     id: String
-    translateId: String
+    user: String
+    word: String
+    translate: String
+    translateLanguage: String
+    language: String
+  }
+
+  input WordInput {
     user: String
     word: String
     translate: String

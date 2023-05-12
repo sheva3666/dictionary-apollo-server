@@ -5,9 +5,16 @@ const DictionaryAPI = require("./src/dataSources/dictionaryApi");
 
 const typeDefsWords = require("./src/graphql/wordsSchema");
 const typeDefsUser = require("./src/graphql/usersSchema");
+const typeDefsAuth = require("./src/graphql/authSchema");
+const typeDefsTranslatedWords = require("./src/graphql/translatedWordsSchema");
 
 const server = new ApolloServer({
-  typeDefs: [typeDefsWords, typeDefsUser],
+  typeDefs: [
+    typeDefsWords,
+    typeDefsUser,
+    typeDefsAuth,
+    typeDefsTranslatedWords,
+  ],
   resolvers,
   introspection: true,
   context: ({ req, res }) => ({
