@@ -8,6 +8,8 @@ const typeDefsUser = gql`
   type UserAuth {
     userEmail: String
     userAuth: Boolean
+    language: String
+    languageForLearn: String
   }
 `;
 

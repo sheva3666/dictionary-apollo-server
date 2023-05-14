@@ -12,7 +12,6 @@ const typeDefsUser = gql`
 
   type User {
     id: String!
-    name: String
     email: String
     password: String
     language: String
@@ -22,10 +21,11 @@ const typeDefsUser = gql`
   type UserAuth {
     userEmail: String
     userAuth: Boolean
+    language: String
+    languageForLearn: String
   }
 
   input UpdateUserInput {
-    name: String
     email: String
     password: String
     language: String
@@ -33,7 +33,6 @@ const typeDefsUser = gql`
   }
 
   input UserInput {
-    name: String
     email: String
     password: String
     language: String
