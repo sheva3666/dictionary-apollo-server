@@ -5,6 +5,10 @@ const typeDefsUser = gql`
     auth(userEmail: String!): UserAuth
   }
 
+  type Mutation {
+    loginUser(email: String!, password: String!): UserAuth
+  }
+
   type UserAuth {
     userEmail: String
     userAuth: Boolean

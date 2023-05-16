@@ -30,10 +30,6 @@ class DictionaryAPI extends RESTDataSource {
     });
   }
 
-  getUser(user, password) {
-    return this.get(`users/${user}/${password}`);
-  }
-
   createUser(user) {
     return this.post("users", JSON.stringify(user), {
       headers: {
@@ -48,6 +44,10 @@ class DictionaryAPI extends RESTDataSource {
         "Content-type": "application/json",
       },
     });
+  }
+
+  loginUser(user, password) {
+    return this.post(`auth/${user}/${password}`);
   }
 
   getAuth(userEmail) {
