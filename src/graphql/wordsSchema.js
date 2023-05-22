@@ -3,6 +3,11 @@ const { gql } = require("apollo-server");
 const typeDefsWords = gql`
   type Query {
     words(user: String!, language: String!, translateLanguage: String!): [Word]
+    randomWord(
+      user: String!
+      language: String!
+      translateLanguage: String!
+    ): Word
   }
 
   type Mutation {
