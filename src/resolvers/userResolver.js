@@ -9,8 +9,8 @@ const userResolver = {
       return dataSources.dictionaryAPI.createUser(user);
     },
 
-    updateUser: (_, { id, user }, { dataSources }) => {
-      return dataSources.dictionaryAPI.updateUser(id, user);
+    updateUser: (_, { user }, { dataSources }) => {
+      return dataSources.dictionaryAPI.updateUser(user);
     },
   },
 };

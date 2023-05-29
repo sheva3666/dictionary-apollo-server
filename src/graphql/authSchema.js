@@ -7,9 +7,17 @@ const typeDefsUser = gql`
 
   type Mutation {
     loginUser(email: String!, password: String!): UserAuth
+    updateAuth(email: String!, auth: UserAuthInput!): UserAuth
   }
 
   type UserAuth {
+    userEmail: String
+    userAuth: Boolean
+    language: String
+    languageForLearn: String
+  }
+
+  input UserAuthInput {
     userEmail: String
     userAuth: Boolean
     language: String

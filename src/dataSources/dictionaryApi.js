@@ -42,8 +42,8 @@ class DictionaryAPI extends RESTDataSource {
     });
   }
 
-  updateUser(id, user) {
-    return this.put(`users/${id}`, JSON.stringify(user), {
+  updateUser(user) {
+    return this.put(`users/${user.email}`, JSON.stringify(user), {
       headers: {
         "Content-type": "application/json",
       },
@@ -56,6 +56,14 @@ class DictionaryAPI extends RESTDataSource {
 
   getAuth(userEmail) {
     return this.get(`auth/${userEmail}`);
+  }
+
+  updateAuth(email, auth) {
+    return this.put(`auth/${email}`, JSON.stringify(auth), {
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
   }
 
   getTranslatedWords(language) {
