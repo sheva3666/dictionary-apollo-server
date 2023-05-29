@@ -1,7 +1,16 @@
 const wordsResolver = {
   Query: {
-    words: (_, { user, language, translateLanguage }, { dataSources }) =>
-      dataSources.dictionaryAPI.getWords(user, language, translateLanguage),
+    words: (
+      _,
+      { user, language, translateLanguage, searchString },
+      { dataSources }
+    ) =>
+      dataSources.dictionaryAPI.getWords(
+        user,
+        language,
+        translateLanguage,
+        searchString
+      ),
     randomWord: (_, { user, language, translateLanguage }, { dataSources }) => {
       return dataSources.dictionaryAPI.getRandomWord(
         user,

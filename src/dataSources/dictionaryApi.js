@@ -18,8 +18,10 @@ class DictionaryAPI extends RESTDataSource {
     );
   }
 
-  getWords(user, language, translateLanguage) {
-    return this.get(`words/${user}/${language}/${translateLanguage}/null`);
+  getWords(user, language, translateLanguage, searchString) {
+    return this.get(
+      `words/${user}/${language}/${translateLanguage}/${searchString}`
+    );
   }
 
   getRandomWord(user, language, translateLanguage) {
