@@ -18,9 +18,9 @@ class DictionaryAPI extends RESTDataSource {
     );
   }
 
-  getWords(user, language, translateLanguage, searchString) {
+  getWords(user, language, translateLanguage, page, searchString) {
     return this.get(
-      `words/${user}/${language}/${translateLanguage}/${searchString}`
+      `words/${user}/${language}/${translateLanguage}/${page}/${searchString}`
     );
   }
 

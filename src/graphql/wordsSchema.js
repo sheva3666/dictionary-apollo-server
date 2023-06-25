@@ -6,8 +6,9 @@ const typeDefsWords = gql`
       user: String!
       language: String!
       translateLanguage: String!
+      page: Int
       searchString: String!
-    ): [Word]
+    ): Words
     randomWord(
       user: String!
       language: String!
@@ -17,6 +18,12 @@ const typeDefsWords = gql`
 
   type Mutation {
     addWord(word: WordInput!): Word!
+  }
+
+  type Words {
+    words: [Word]
+    numberOfPages: Int
+    currentPage: Int
   }
 
   type Word {
