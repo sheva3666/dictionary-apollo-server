@@ -3,6 +3,7 @@ const wordsResolver = require("./wordsResolver");
 const userResolver = require("./userResolver");
 const authResolver = require("./authResolver");
 const translatedWordsResolver = require("./translatedWordsResolver");
+const scoreResolver = require("./scoreResolver");
 
 const resolvers = {
   ...mergeResolvers([
@@ -10,6 +11,7 @@ const resolvers = {
     userResolver,
     authResolver,
     translatedWordsResolver,
+    scoreResolver,
   ]),
 };
 

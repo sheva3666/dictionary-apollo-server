@@ -71,5 +71,17 @@ class DictionaryAPI extends RESTDataSource {
   getTranslatedWords(language) {
     return this.get(`translate/${language}`);
   }
+
+  getScore(userEmail) {
+    return this.get(`score/${userEmail}`);
+  }
+
+  updateScore(score) {
+    return this.put(`score`, JSON.stringify(score), {
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+  }
 }
 module.exports = DictionaryAPI;

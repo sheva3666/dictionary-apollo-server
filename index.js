@@ -7,6 +7,7 @@ const typeDefsWords = require("./src/graphql/wordsSchema");
 const typeDefsUser = require("./src/graphql/usersSchema");
 const typeDefsAuth = require("./src/graphql/authSchema");
 const typeDefsTranslatedWords = require("./src/graphql/translatedWordsSchema");
+const typeDefsScore = require("./src/graphql/scoreSchema");
 
 const server = new ApolloServer({
   typeDefs: [
@@ -14,6 +15,7 @@ const server = new ApolloServer({
     typeDefsUser,
     typeDefsAuth,
     typeDefsTranslatedWords,
+    typeDefsScore,
   ],
   resolvers,
   introspection: true,
