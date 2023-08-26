@@ -72,8 +72,8 @@ class DictionaryAPI extends RESTDataSource {
     return this.get(`translate/${language}`);
   }
 
-  getScore(userEmail) {
-    return this.get(`score/${userEmail}`);
+  getScore(userEmail, language) {
+    return this.get(`score/${userEmail}/${language}`);
   }
 
   updateScore(score) {

@@ -1,8 +1,7 @@
 const scoreResolver = {
   Query: {
-    score: (_, { userEmail }, { dataSources }) => {
-      console.log(userEmail);
-      return dataSources.dictionaryAPI.getScore(userEmail);
+    score: (_, { userEmail, language }, { dataSources }) => {
+      return dataSources.dictionaryAPI.getScore(userEmail, language);
     },
   },
   Mutation: {
