@@ -2,7 +2,11 @@ const { gql } = require("apollo-server");
 
 const typeDefsTranslatedWords = gql`
   type Query {
-    translatedWords(language: String!): [TranslatedWord]
+    translatedWords(
+      user: String!
+      languageForLearn: String!
+      language: String!
+    ): [TranslatedWord]
   }
 
   type TranslatedWord {

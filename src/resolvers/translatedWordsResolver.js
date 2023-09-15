@@ -1,7 +1,15 @@
 const wordsResolver = {
   Query: {
-    translatedWords: (_, { language }, { dataSources }) =>
-      dataSources.dictionaryAPI.getTranslatedWords(language),
+    translatedWords: (
+      _,
+      { user, languageForLearn, language },
+      { dataSources }
+    ) =>
+      dataSources.dictionaryAPI.getTranslatedWords(
+        user,
+        languageForLearn,
+        language
+      ),
   },
 };
 

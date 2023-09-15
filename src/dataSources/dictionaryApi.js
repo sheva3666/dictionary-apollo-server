@@ -68,8 +68,8 @@ class DictionaryAPI extends RESTDataSource {
     });
   }
 
-  getTranslatedWords(language) {
-    return this.get(`translate/${language}`);
+  getTranslatedWords(user, languageForLearn, language) {
+    return this.get(`translate/${user}/${languageForLearn}/${language}`);
   }
 
   getScore(userEmail, language) {
