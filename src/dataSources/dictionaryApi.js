@@ -36,6 +36,18 @@ class DictionaryAPI extends RESTDataSource {
     });
   }
 
+  getUser(user) {
+    return this.get(`users/${user}`);
+  }
+
+  updatePassword(user, password, newPassword) {
+    return this.put(`users/${user}/${password}/${newPassword}/change`, {
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+  }
+
   createUser(user) {
     return this.post("users", JSON.stringify(user), {
       headers: {
@@ -54,18 +66,6 @@ class DictionaryAPI extends RESTDataSource {
 
   loginUser(user, password) {
     return this.post(`auth/${user}/${password}`);
-  }
-
-  getAuth(userEmail) {
-    return this.get(`auth/${userEmail}`);
-  }
-
-  updateAuth(email, auth) {
-    return this.put(`auth/${email}`, JSON.stringify(auth), {
-      headers: {
-        "Content-type": "application/json",
-      },
-    });
   }
 
   getTranslatedWords(user, languageForLearn, language) {

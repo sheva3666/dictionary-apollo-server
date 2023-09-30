@@ -1,27 +1,12 @@
 const { gql } = require("apollo-server");
 
 const typeDefsUser = gql`
-  type Query {
-    auth(userEmail: String!): UserAuth
-  }
-
   type Mutation {
-    loginUser(email: String!, password: String!): UserAuth
-    updateAuth(email: String!, auth: UserAuthInput!): UserAuth
+    loginUser(email: String!, password: String!): Token
   }
 
-  type UserAuth {
-    userEmail: String
-    userAuth: Boolean
-    language: String
-    languageForLearn: String
-  }
-
-  input UserAuthInput {
-    userEmail: String
-    userAuth: Boolean
-    language: String
-    languageForLearn: String
+  type Token {
+    token: String!
   }
 `;
 

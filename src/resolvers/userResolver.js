@@ -1,7 +1,7 @@
 const userResolver = {
   Query: {
-    user: (_, { user, password }, { dataSources }) => {
-      return dataSources.dictionaryAPI.getUser(user, password);
+    user: (_, { user }, { dataSources }) => {
+      return dataSources.dictionaryAPI.getUser(user);
     },
   },
   Mutation: {
@@ -11,6 +11,14 @@ const userResolver = {
 
     updateUser: (_, { user }, { dataSources }) => {
       return dataSources.dictionaryAPI.updateUser(user);
+    },
+
+    updatePassword: (_, { user, password, newPassword }, { dataSources }) => {
+      return dataSources.dictionaryAPI.updatePassword(
+        user,
+        password,
+        newPassword
+      );
     },
   },
 };
